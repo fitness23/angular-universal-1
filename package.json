@@ -4,8 +4,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test"
+    "build-dev": "ng build",
+    "test": "ng test",
+    "vercel-build": "npm run build:ssr"
   },
   "private": true,
   "dependencies": {
