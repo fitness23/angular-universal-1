@@ -1,0 +1,21 @@
+<p>Here are all the water pokemon112233:</p>
+<ul>
+    <li *ngFor="let pokemon of waterPokemon$ | async" [value]="pokemon">{{pokemon.name | titlecase}}</li>
+</ul>
+
+<hr />
+
+<button type="button" (click)="callAjaxExample()">Call ajax example</button>
+
+<table class="standardTable" *ngIf="(items$ | async)?.length !== 0; else loading">
+    <tr><th>Name</th><th>View</th></tr>
+    <tr *ngFor="let item of items$ | async"><td>{{item.pokemon.name | titlecase}}</td><td>View Pokemon Character</td></tr>
+</table>
+
+<ng-template #loading>
+<div class="useSearch">Please use the search to filter various Pokemon.</div>
+</ng-template>
+
+<hr />
+
+<router-outlet></router-outlet>
